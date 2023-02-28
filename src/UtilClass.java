@@ -8,6 +8,7 @@ public class UtilClass {
         temperatureConversion();
         monthlyPayment();
         sqrt();
+        toBinary();
     }
 
     static void dayOfWeek() {
@@ -89,5 +90,20 @@ public class UtilClass {
         }
         System.out.println("Square root = " + t);
     }
+    static void toBinary(){
+        int[] ans = new int[20] ;
+        int i=1;
+        System.out.println("Enter the number - ");
+        int a = input.nextInt();
 
+        while (a!=0) {
+            ans[i] = a % 2;
+            a = a / 2;
+            i++;
+        }
+        System.out.println("Binary no. is ");
+        for (int j=i;j>0;j--){
+            System.out.print(ans[j]);
+        }
+    }
 }
