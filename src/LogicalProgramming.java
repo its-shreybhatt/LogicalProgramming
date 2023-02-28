@@ -5,9 +5,11 @@ public class LogicalProgramming {
 
     public static void main(String[] args) {
         LogicalProgramming logicalProgramming = new LogicalProgramming();
-//        logicalProgramming.fibonacciSeries();
-//        logicalProgramming.perfectNumber();
+
+        logicalProgramming.fibonacciSeries();
+        logicalProgramming.perfectNumber();
         logicalProgramming.primeNumber();
+        logicalProgramming.reverseNumber();
     }
 
     void fibonacciSeries() {
@@ -55,5 +57,16 @@ public class LogicalProgramming {
             }
             System.out.println("Number is prime ");
         }
+    }
+    void reverseNumber() {
+        System.out.println("Enter the number -");
+        int numb = input.nextInt();
+        int reverse = 0;
+        for (int i = 1; i <= numb; i++) {
+            int reminder = numb % 10;
+            reverse = reverse * 10 + reminder;
+            numb = numb / 10;
+        }
+        System.out.println(reverse);
     }
 }
