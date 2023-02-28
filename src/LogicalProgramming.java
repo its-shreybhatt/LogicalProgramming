@@ -8,11 +8,11 @@ public class LogicalProgramming {
     public static void main(String[] args) {
         LogicalProgramming logicalProgramming = new LogicalProgramming();
 
-//        logicalProgramming.fibonacciSeries();
-//        logicalProgramming.perfectNumber();
-//        logicalProgramming.primeNumber();
-//        logicalProgramming.reverseNumber();
-//        logicalProgramming.couponNumber();
+        logicalProgramming.fibonacciSeries();
+        logicalProgramming.perfectNumber();
+        logicalProgramming.primeNumber();
+        logicalProgramming.reverseNumber();
+        logicalProgramming.couponNumber();
         logicalProgramming.stopwatch();
     }
 
