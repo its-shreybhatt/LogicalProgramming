@@ -1,3 +1,4 @@
+import java.time.LocalTime;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,11 +8,12 @@ public class LogicalProgramming {
     public static void main(String[] args) {
         LogicalProgramming logicalProgramming = new LogicalProgramming();
 
-        logicalProgramming.fibonacciSeries();
-        logicalProgramming.perfectNumber();
-        logicalProgramming.primeNumber();
-        logicalProgramming.reverseNumber();
-        logicalProgramming.couponNumber();
+//        logicalProgramming.fibonacciSeries();
+//        logicalProgramming.perfectNumber();
+//        logicalProgramming.primeNumber();
+//        logicalProgramming.reverseNumber();
+//        logicalProgramming.couponNumber();
+        logicalProgramming.stopwatch();
     }
 
     void fibonacciSeries() {
@@ -60,6 +62,7 @@ public class LogicalProgramming {
             System.out.println("Number is prime ");
         }
     }
+
     void reverseNumber() {
         System.out.println("Enter the number -");
         int numb = input.nextInt();
@@ -71,6 +74,7 @@ public class LogicalProgramming {
         }
         System.out.println(reverse);
     }
+
     void couponNumber() {
 
         // asked user for number of coupon then enter distinct coupon no.and store in an array
@@ -101,4 +105,25 @@ public class LogicalProgramming {
         System.out.println(" " + "No. of times random values generated are = " + count);
     }
 
+    void stopwatch() {
+        long start, end;
+        double time;
+
+        System.out.println("Enter s to start-");
+        char s = input.next().charAt(0);
+        start = System.currentTimeMillis();
+
+        LocalTime startobj = LocalTime.now();
+        System.out.println("Start time =" + startobj);
+
+        System.out.println("Enter p to stop -");
+        String endd = input.next();
+        end = System.currentTimeMillis();
+
+        LocalTime endobj = LocalTime.now();
+        System.out.println("Stop time =" + endobj);
+
+        time = (end - start) / 1000.0;
+        System.out.println("Duration = " +time);
+    }
 }
