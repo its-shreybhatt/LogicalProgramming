@@ -1,11 +1,15 @@
 import java.util.Scanner;
 
 public class UtilClass {
+    static Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
         dayOfWeek();
+        temperatureConversion();
     }
+
     static void dayOfWeek() {
-        Scanner input = new Scanner(System.in);
+
         System.out.println("Enter date -");
         int d = input.nextInt();
         System.out.println("Enter month -");
@@ -17,7 +21,7 @@ public class UtilClass {
         double newm = m + 12 * ((14 - m) / 12) - 2;
         int newd = (int) (d + x + 31 * newm / 12) % 7;
 
-        switch (newd){
+        switch (newd) {
             case 0:
                 System.out.println("Sunday");
                 break;
@@ -38,6 +42,24 @@ public class UtilClass {
                 break;
             case 6:
                 System.out.println("Saturday");
+                break;
+        }
+    }
+
+    static void temperatureConversion() {
+        System.out.println("Enter the temperature -");
+        int temp = input.nextInt();
+        System.out.println("Enter the conversion -");
+        System.out.println("Press 1: for Celsius to Fahrenheit // 2 for Fahrenheit to Celsius -");
+        int value = input.nextInt();
+        switch (value) {
+            case 1:
+                double fahrenheit = (temp * 9 / 5) + 32;
+                System.out.println(fahrenheit + " F");
+                break;
+            case 2:
+                double celsius = (temp - 32) * 5 / 9;
+                System.out.println(celsius + " C");
                 break;
         }
     }
