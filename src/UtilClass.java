@@ -6,6 +6,7 @@ public class UtilClass {
     public static void main(String[] args) {
         dayOfWeek();
         temperatureConversion();
+        monthlyPayment();
     }
 
     static void dayOfWeek() {
@@ -62,5 +63,18 @@ public class UtilClass {
                 System.out.println(celsius + " C");
                 break;
         }
+    }
+
+    static void monthlyPayment() {
+        System.out.println("Enter number of Years -");
+        int Y = input.nextInt();
+        System.out.println("Enter the Amount -");
+        int P = input.nextInt();
+        System.out.println("Enter the rate -");
+        double R = input.nextInt();
+        double n = 12 * Y;
+        double r = R / (12 * 100);
+        double payment = ((P * r) / (1 - Math.pow(1 + r, -n)));
+        System.out.println(payment);
     }
 }
