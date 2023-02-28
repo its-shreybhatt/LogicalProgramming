@@ -15,4 +15,5 @@ public class LogicalProgramming {
             System.out.print(number + " ");
         }
     }
+
 }
