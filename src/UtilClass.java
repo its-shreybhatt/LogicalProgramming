@@ -7,6 +7,7 @@ public class UtilClass {
         dayOfWeek();
         temperatureConversion();
         monthlyPayment();
+        sqrt();
     }
 
     static void dayOfWeek() {
@@ -77,4 +78,16 @@ public class UtilClass {
         double payment = ((P * r) / (1 - Math.pow(1 + r, -n)));
         System.out.println(payment);
     }
+
+    static void sqrt() {
+        System.out.println("Enter number -");
+        int c = input.nextInt();
+        double t = c;
+        double epsilon = 1e-15;
+        while (Math.abs(t - (c / t)) > epsilon * t) {
+            t = ((c / t) + t) / 2;
+        }
+        System.out.println("Square root = " + t);
+    }
+
 }
