@@ -2,13 +2,15 @@ import java.util.Scanner;
 
 public class LogicalProgramming {
     static Scanner input = new Scanner(System.in);
-    public static void main(String[] args) {
-        LogicalProgramming logicalProgramming=new LogicalProgramming();
-        logicalProgramming.fibonacciSeries();
-        logicalProgramming.perfectNumber();
 
+    public static void main(String[] args) {
+        LogicalProgramming logicalProgramming = new LogicalProgramming();
+//        logicalProgramming.fibonacciSeries();
+//        logicalProgramming.perfectNumber();
+        logicalProgramming.primeNumber();
     }
-     void fibonacciSeries() {
+
+    void fibonacciSeries() {
         int number = 0;
         System.out.println("Please enter Number -");
         int num = input.nextInt();
@@ -17,6 +19,7 @@ public class LogicalProgramming {
             System.out.print(number + " ");
         }
     }
+
     void perfectNumber() {
         System.out.println("Enter the number -");
         int numb = input.nextInt();
@@ -35,4 +38,22 @@ public class LogicalProgramming {
         } else System.out.print(numb + " is not a perfect number");
     }
 
+    void primeNumber() {
+        System.out.println("Enter the number -");
+        int numb = input.nextInt();
+        int a = 3;
+        if (numb == 0 || numb == 1) {
+            System.out.println("Number is not prime");
+        } else {
+            if (numb > a) {
+                for (int i = 2; i < numb; i++) {
+                    if (numb % i == 0) {
+                        System.out.println("Number is not prime");
+                        return;
+                    }
+                }
+            }
+            System.out.println("Number is prime ");
+        }
+    }
 }
