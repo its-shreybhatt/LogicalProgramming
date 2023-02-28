@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class LogicalProgramming {
@@ -10,6 +11,7 @@ public class LogicalProgramming {
         logicalProgramming.perfectNumber();
         logicalProgramming.primeNumber();
         logicalProgramming.reverseNumber();
+        logicalProgramming.couponNumber();
     }
 
     void fibonacciSeries() {
@@ -69,4 +71,34 @@ public class LogicalProgramming {
         }
         System.out.println(reverse);
     }
+    void couponNumber() {
+
+        // asked user for number of coupon then enter distinct coupon no.and store in an array
+        // traverse the array till all coupon number are obtained by random and print the count
+
+        System.out.println("Enter no. of Coupon -");
+        int numb = input.nextInt();
+        System.out.println("Enter different Coupons -");
+        int[] array = new int[numb];
+        int count = 0;
+        for (int i = 0; i < numb; i++) {
+            array[i] = input.nextInt();
+        }
+        int matchCount = 0;
+        Random random = new Random();
+        System.out.print(" Random values are - ");
+        while (matchCount < numb) {
+            count += 1;
+            int randomCoupon = random.nextInt(10);
+            for (int j = 0; j < numb; j++) {
+                if (array[j] == randomCoupon) {
+                    System.out.print(randomCoupon + " ");
+                    matchCount += 1;
+                    array[j] = -1;
+                }
+            }
+        }
+        System.out.println(" " + "No. of times random values generated are = " + count);
+    }
+
 }
